@@ -1,0 +1,32 @@
+{* This is the welcome page, you can delete it *}
+
+{block content}
+<div id="banner">
+	<h1 n:block=title>Curriculum Vitae</h1>
+	<h2>{$applicant->name}</h2>
+</div>
+
+<div id="content">
+	<p><strong>Applying for position:</strong> {$position}</p>
+
+	<ul class="nav nav-tabs nav-justified">
+        <li><a href="{link CurriculumVitae:default}">Personal</a></li>
+        <li class="active"><a href="{link CurriculumVitae:education}">Education</a></li>
+        <li><a href="{link CurriculumVitae:workExperience}">Work Experiences</a></li>
+        <li><a href="{link CurriculumVitae:skills}">Skills</a></li>
+    </ul>
+
+    <div id="ajaxWrapper">
+        <h3>Education</h3>
+
+        {foreach $educations as $item}
+            <p>
+                <strong>Period:</strong> {$item->period}<br>
+                <strong>School:</strong> {$item->school}<br>
+                <strong>Finished with:</strong> {$item->finishedWith}<br>
+            </p>
+        {/foreach}
+	</div>
+</div>
+
+

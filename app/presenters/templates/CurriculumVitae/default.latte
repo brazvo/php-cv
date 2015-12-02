@@ -1,0 +1,31 @@
+{* This is the welcome page, you can delete it *}
+
+{block content}
+<div id="banner">
+	<h1 n:block=title>Curriculum Vitae</h1>
+	<h2>{$applicant->name}</h2>
+</div>
+
+<div id="content">
+	<p><strong>Applying for position:</strong> {$position}</p>
+
+	<ul class="nav nav-tabs nav-justified">
+        <li class="active"><a href="{link CurriculumVitae:default}">Personal</a></li>
+        <li><a href="{link CurriculumVitae:education}">Education</a></li>
+        <li><a href="{link CurriculumVitae:workExperience}">Work Experiences</a></li>
+        <li><a href="{link CurriculumVitae:skills}">Skills</a></li>
+    </ul>
+
+    <div id="ajaxWrapper">
+        <h3>Personal Information</h3>
+
+        <p>
+            <strong>Date of birth:</strong> {$applicant->dateOfBirth}<br>
+            <strong>Address:</strong> {$applicant->address}<br>
+            <strong>Phone:</strong> {$applicant->phone}<br>
+            <strong>Email:</strong> {$applicant->email}
+        </p>
+	</div>
+</div>
+
+
