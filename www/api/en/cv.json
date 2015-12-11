@@ -1,0 +1,140 @@
+{
+    "name": "Branislav Zvolensky",
+    "position": "PHP and Web developer",
+    "date_of_birth": "1972-06-08 04:06:00",
+    "place_of_birth": "Bratislava",
+    "address": "Patas 103, 92901 Patas, Slovakia",
+    "description": [
+        "Welcome on my CV web page. I'm a PHP/WEB developer. I prefer full stack work. It means I like working on both sides of web applications - front-ends and back-ends. The primary technology I am working with is PHP, but I am very glad when I have a chance to work with another technologies to face against new challenges or to improve my skills.",
+        "If you're looking for a co-worker who is a team mate open to the world of new technologies with enthusiasm to be better, don't hesitate to contact me."
+    ],
+    "contacts": [
+        {
+            "type": "Phone",
+            "contact": "+421 903 454784"
+        },
+        {
+            "type": "Email",
+            "contact": "brano@zvolensky.info"
+        }
+    ],
+    "jobs": [
+        {
+            "company": "DPD Parcel Distribution",
+            "position": "Senior IT Developer",
+            "period": "2015/04 - Current",
+            "description": "I work on internal systems such as Intranet, CRM, Cashcheck System, etc., with technologies such as PHP 5.5, Soap, JSON, REST, MSSQL, Postgres, CouchDB, Git, Angular"
+        },
+        {
+            "company": "Azet.sk a.s.",
+            "position": "Senior Web Developer / Team leader",
+            "period": "2015/01 - 2015/04",
+            "description": "I worked on web sites such as cas.sk, sport.sk, aktuality.sk and more in Azet portfolio, with technologies such as PHP 5.5, HTML5, CSS3, jQuery, MySQL, Elastic Search, etc"
+        },
+        {
+            "company": "MB Entertainment",
+            "position": "Senior PHP Developer / Team leader",
+            "period": "2011/02 - 2014/12",
+            "description": "I worked on web sites for Orange Slovensko such as osporte.sk, ohudbe.sk, oskole.sk, Salespad tool for salesmen, with technologies such as PHP 5.3+, HTML5, CSS3, XML, jQuery, MySQL, etc"
+        }
+    ],
+    "education": [
+        {
+            "period": "1986 - 1990",
+            "school": "SOU Zeleznicne, Na Pantoch 7, Bratislava",
+            "finished_with": "Examine Level A (maturita)"
+        }
+    ],
+    "skills": [
+        {
+            "group": "Languages",
+            "items": [
+                {
+                    "skill": "Slovak",
+                    "level": "Expert",
+                    "description": "Mother's Language"
+                },
+                {
+                    "skill": "English (spoken)",
+                    "level": "Intermediate",
+                    "description": ""
+                },
+                {
+                    "skill": "English (written)",
+                    "level": "Advanced",
+                    "description": ""
+                },
+                {
+                    "skill": "Czech",
+                    "level": "Advanced",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "group": "Programming",
+            "items": [
+                {
+                    "skill": "PHP",
+                    "level": "Expert",
+                    "description": "OOP, Nette, Zend 2, Phalcon"
+                },
+                {
+                    "skill": "JS",
+                    "level": "Advanced",
+                    "description": "OOP, jQuery, Angular, Bootstrap"
+                },
+                {
+                    "skill": "SQL",
+                    "level": "Advanced",
+                    "description": "MySQL, Postgres, MSSQL, stored procedures, fx"
+                },
+                {
+                    "skill": "Non-SQL",
+                    "level": "Intermediate",
+                    "description": "Mongo, Couch DB, Elastic"
+                },
+                {
+                    "skill": "HTML/HTML5",
+                    "level": "Advanced",
+                    "description": "Responsive designs, Bootstrap, Semantics"
+                },
+                {
+                    "skill": "CSS/CSS3",
+                    "level": "Advanced",
+                    "description": "Media queries, LESS, SCSS, Bootstrap"
+                }
+            ]
+        },
+        {
+            "group": "Other",
+            "items": [
+                {
+                    "skill": "GIT",
+                    "level": "Advanced",
+                    "description": "Command line, Gitlab, Stash"
+                },
+                {
+                    "skill": "SVN",
+                    "level": "Intermediate",
+                    "description": "Tortoise SVN"
+                },
+                {
+                    "skill": "Adobe Photoshop",
+                    "level": "Intermediate",
+                    "description": "Have no problem to extract graphics to be implemented into HTLM and CSS."
+                }
+            ]
+        },
+        {
+            "group":"Driving",
+            "items": [
+                {
+                    "skill": "Driving Licence C",
+                    "level": "Expert",
+                    "description": "Over 500000 km without accident"
+                }
+            ]
+        }
+    ]
+}

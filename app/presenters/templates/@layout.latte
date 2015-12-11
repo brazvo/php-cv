@@ -4,47 +4,113 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 
+	<base href="{$basePath}/">
+
 	<title>{ifset title}{include title|striptags} | {/ifset}Nette Web</title>
 
 	<link rel="shortcut icon" href="{$basePath}/favicon.ico">
-	<link rel="stylesheet" href="{$basePath}/bower_components/bootstrap/dist/css/bootstrap.min.css">
-	<style>
-    	body { background: #3484d2; color: #333; margin: 2em auto; padding: 0 .5em; max-width: 600px; min-width: 320px; }
-
-    	a { color: #006aeb; padding: 3px 1px; }
-    	a:hover, a:active, a:focus { background-color: #006aeb; text-decoration: none; color: white; }
-
-    	#banner { border-radius: 12px 12px 0 0; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAB5CAMAAADPursXAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAGBQTFRFD1CRDkqFDTlmDkF1D06NDT1tDTNZDk2KEFWaDTZgDkiCDTtpDT5wDkZ/DTBVEFacEFOWD1KUDTRcDTFWDkV9DkR7DkN4DkByDTVeDC9TDThjDTxrDkeADkuIDTRbDC9SbsUaggAAAEdJREFUeNqkwYURgAAQA7DH3d3335LSKyxAYpf9vWCpnYbf01qcOdFVXc14w4BznNTjkQfsscAdU3b4wIh9fDVYc4zV8xZgAAYaCMI6vPgLAAAAAElFTkSuQmCC); }
-
-    	h1 { font: inherit; color: white; font-size: 50px; line-height: 121px; margin: 0; padding-left: 4%; text-shadow: 1px 1px 0 rgba(0, 0, 0, .9); }
-    	#banner h2 { font: inherit; color: white; font-size: 36px; line-height: 40px; margin: 0; padding: 10px 4%; text-shadow: 1px 1px 0 rgba(0, 0, 0, .9); }
-    	@media (max-width: 600px) {
-    		h1 { background: none; font-size: 40px; }
-    	}
-
-    	#content { background: white; border: 1px solid #eff4f7; border-radius: 0 0 12px 12px; padding: 10px 4%; overflow: hidden; }
-
-    	#content p {
-    	    margin: 10px 0;
-    	    line-height: 1.3em
-    	}
-
-    	#content .row { margin: 10px 0; border-bottom: dotted 1px #ddd }
-
-    	h3 { font: inherit; font-weight: bold; font-size: 24px; padding: 10px 0; margin: 0; }
-
-    	img { border: none; float: right; margin: 0 0 1em 3em; }
-    </style>
+	<link rel="stylesheet" href="{$basePath}/bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+    <link href="{$basePath}/theme/css/owl-carousel/owl.carousel.css" rel="stylesheet" media="all">
+    <link href="{$basePath}/theme/css/owl-carousel/owl.theme.css" rel="stylesheet" media="all">
+    <link href="{$basePath}/theme/css/magnific-popup.css" type="text/css" rel="stylesheet" media="all"/>
+    <link href="{$basePath}/theme/css/font.css" rel="stylesheet" type="text/css" media="all">
+    <link href="{$basePath}/theme/css/fontello.css" rel="stylesheet" type="text/css" media="all">
+    <link href="{$basePath}/theme/css/base.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="{$basePath}/theme/css/main.css" rel="stylesheet" type="text/css" media="all"/>
 </head>
 
 <body>
 	<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
 
-	{include content}
+	<!--Wrapper-->
+    <div id="wrapper" class="margLTop  margLBottom">
+
+        <!--Container-->
+        <div class="container">
+            <div class="row ">
+                <!--Left content-->
+
+                <div class="col-md-3 nopr left-content">
+
+                    <!--Header-->
+                    <header id="header">
+
+                        <!--Main header-->
+                        <div class="main-header">
+
+                            <!--Profile image-->
+                            <figure class="img-profile">
+                                <img src="theme/img/profile.jpg" alt=""/>
+
+                                <figcaption class="name-profile">
+                                    <span>Braňo Zvolenský <sup>&reg;</sup></span>
+                                </figcaption>
+
+                            </figure>
+                            <!--End profile image-->
+
+
+                            <!--Main navigation-->
+                            <nav id="main-nav" class="main-nav clearfix tabbed">
+                                <ul>
+                                    <li n:class="$presenter->isLinkCurrent('CurriculumVitae:default') ? active">
+                                        <a href="{link CurriculumVitae:default}" n:class="$presenter->isLinkCurrent('CurriculumVitae:default') ? active"><i class="icon-user"></i>Personal Information</a></li>
+                                    <li n:class="$presenter->isLinkCurrent('CurriculumVitae:education') ? active">
+                                        <a href="{link CurriculumVitae:education}" n:class="$presenter->isLinkCurrent('CurriculumVitae:education') ? active"><i class="icon-graduation-cap"></i>Education</a></li>
+                                    <li n:class="$presenter->isLinkCurrent('CurriculumVitae:workExperience') ? active">
+                                        <a href="{link CurriculumVitae:workExperience}" n:class="$presenter->isLinkCurrent('CurriculumVitae:workExperience') ? active"><i class="icon-briefcase"></i>Work Experiences</a></li>
+                                    <li n:class="$presenter->isLinkCurrent('CurriculumVitae:skills') ? active">
+                                        <a href="{link CurriculumVitae:skills}" n:class="$presenter->isLinkCurrent('CurriculumVitae:skills') ? active"><i class="icon-book"></i>Skills</a></li>
+                                    <li n:class="$presenter->isLinkCurrent('CurriculumVitae:about') ? active">
+                                        <a href="{link CurriculumVitae:about}" n:class="$presenter->isLinkCurrent('CurriculumVitae:about') ? active"><i class="icon-info"></i>About CV</a></li>
+                                </ul>
+                            </nav>
+                            <!--End main navigation-->
+
+
+                        </div>
+                        <!--End main header-->
+
+                        <div class="bottom-header bgWhite ofsTSmall ofsBSmall tCenter">
+                            <ul class="social">
+                                <li><a href="https://sk.linkedin.com/in/branislavzvolensky" target="_blank"><i class="icon-linkedin"></i></a></li>
+                                <li><a href="https://www.facebook.com/Branislav-Zvolensky-238847796167258/" target="_blank"><i class="icon-facebook"></i></a></li>
+                                <li><a href="https://plus.google.com/u/0/100516405335974529380/" target="_blank"><i class="icon-gplus"></i></a></li>
+                            </ul>
+
+                            <p>&copy; 2015 Braňo Zvolenský</p>
+                            <p>PHP version: v1.0.0</p>
+
+                        </div>
+
+
+                    </header>
+                    <!--End  header-->
+
+                </div>
+                <!--End left content-->
+
+                <!--Right content-->
+                <div class="col-md-9 right-content">
+
+                    {include content}
+
+                </div>
+                <!--End right content-->
+
+            </div>
+            <!--End  row-->
+
+        </div>
+        <!--End  container-->
+
+    </div>
+    <!--End wrapper-->
 
 	{block scripts}
 	<script src="{$basePath}/bower_components/jquery/dist/jquery.min.js"></script>
 	<script src="{$basePath}/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="{$basePath}/js/subpage-load.js"></script>
 	<script src="//nette.github.io/resources/js/netteForms.min.js"></script>
 	{/block}
 </body>

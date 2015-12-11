@@ -1,38 +1,83 @@
 {* This is the welcome page, you can delete it *}
 
 {block content}
-<div id="banner">
-	<h1 n:block=title>Curriculum Vitae</h1>
-	<h2>{$applicant->name}</h2>
-</div>
 
-<div id="content">
-	<p><strong>Applying for position:</strong> {$position}</p>
+<!--About Tab-->
+<section id="about" class="bgWhite ofsInBottom">
 
-	<ul class="nav nav-tabs nav-justified">
-        <li><a href="{link CurriculumVitae:default}">Personal</a></li>
-        <li><a href="{link CurriculumVitae:education}">Education</a></li>
-        <li><a href="{link CurriculumVitae:workExperience}">Work Experiences</a></li>
-        <li class="active"><a href="{link CurriculumVitae:skills}">Skills</a></li>
-    </ul>
+    <!--About -->
+    <div class="about">
 
-    <div id="ajaxWrapper">
-        <h2>Skills</h2>
+        <!--Main title-->
 
-        {foreach $skills as $skillGroupName => $skillGroup}
-            <h3>{$skillGroupName}</h3>
-            {foreach $skillGroup as $item}
-                <div class="row">
-                    <h4>{$item->skill} <small>{$item->level}</small></h4>
-                    {if isset($item->description)}
-                        <p>
-                            <strong>Description:</strong> {$item->description}
-                        </p>
-                    {/if}
+        <div class="main-title">
+            <h1 n:block=title>my skills</h1>
+
+            <div class="divider">
+                <div class="zigzag large clearfix " data-svg-drawing="yes">
+                    <svg xml:space="preserve" viewBox="0 0 69.172 14.975" width="37" height="28" y="0px" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1">
+	<path d="M1.357,12.26 10.807,2.81 20.328,12.332
+		29.781,2.879 39.223,12.321 48.754,2.79 58.286,12.321 67.815,2.793 "  style="stroke-dasharray: 93.9851, 93.9851; stroke-dashoffset: 0;"/>
+	</svg>
                 </div>
-            {/foreach}
-        {/foreach}
-	</div>
-</div>
+
+
+            </div>
+
+
+        </div>
+
+        <!--End main title-->
+
+
+        <!--Content-->
+        <div class="content">
+
+            <!--Block content-->
+            <div class="block-content margBMedium margTMedium" n:foreach="$skills as $groupItem">
+
+
+                <!--Skill design-->
+                <div class="skill {strtolower($groupItem->group)}">
+
+
+                    <!--Row-->
+                    <div class="row">
+
+                        <div class="vc">
+
+                            <div class="col-md-12">
+
+                                <ul class="skills-list clearfix">
+                                    <li n:foreach="$groupItem->items as $item">
+                                        <h4>{$item->skill} <small n:if="$item->description">({$item->description})</small></h4>
+                                        <div class="progress">
+                                            <div class="percentage {strtolower($item->level)}"></div>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                                <div class="title {strtolower($groupItem->group)}">
+                                    <span>{$groupItem->group}</span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!--End row-->
+
+                </div>
+                <!--End skill design-->
+
+            </div>
+            <!--End block content-->
+
+
+        </div>
+        <!--End content-->
+    </div>
+</section>
 
 

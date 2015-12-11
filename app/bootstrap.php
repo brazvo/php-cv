@@ -1,5 +1,8 @@
 <?php
 
+define('APP_DIR', __DIR__);
+define('WWW_DIR', APP_DIR . '/../www');
+
 require __DIR__ . '/../vendor/autoload.php';
 
 $configurator = new Nette\Configurator;
@@ -14,7 +17,9 @@ $configurator->createRobotLoader()
 	->register();
 
 $configurator->addConfig(__DIR__ . '/config/config.neon');
-$configurator->addConfig(__DIR__ . '/config/config.local.neon');
+if(file_exists(__DIR__ . '/config/config.local.neon')) {
+	$configurator->addConfig(__DIR__ . '/config/config.local.neon');
+}
 
 $container = $configurator->createContainer();
 

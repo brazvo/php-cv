@@ -1,32 +1,77 @@
-{* This is the welcome page, you can delete it *}
-
 {block content}
-<div id="banner">
-	<h1 n:block=title>Curriculum Vitae</h1>
-	<h2>{$applicant->name}</h2>
-</div>
+<!--About Tab-->
+<section id="about" class="bgWhite ofsInBottom">
 
-<div id="content">
-	<p><strong>Applying for position:</strong> {$position}</p>
+    <!--About -->
+    <div class="about">
+        <!--Main title-->
 
-	<ul class="nav nav-tabs nav-justified">
-        <li><a href="{link CurriculumVitae:default}">Personal</a></li>
-        <li class="active"><a href="{link CurriculumVitae:education}">Education</a></li>
-        <li><a href="{link CurriculumVitae:workExperience}">Work Experiences</a></li>
-        <li><a href="{link CurriculumVitae:skills}">Skills</a></li>
-    </ul>
+        <div class="main-title">
+            <h1 n:block=title>education</h1>
 
-    <div id="ajaxWrapper">
-        <h3>Education</h3>
+            <div class="divider">
+                <div class="zigzag large clearfix " data-svg-drawing="yes">
+                    <svg xml:space="preserve" viewBox="0 0 69.172 14.975" width="37" height="28" y="0px" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1">
+	<path d="M1.357,12.26 10.807,2.81 20.328,12.332
+		29.781,2.879 39.223,12.321 48.754,2.79 58.286,12.321 67.815,2.793 "  style="stroke-dasharray: 93.9851, 93.9851; stroke-dashoffset: 0;"/>
+	</svg>
+                </div>
+            </div>
+        </div>
 
-        {foreach $educations as $item}
-            <p>
-                <strong>Period:</strong> {$item->period}<br>
-                <strong>School:</strong> {$item->school}<br>
-                <strong>Finished with:</strong> {$item->finishedWith}<br>
-            </p>
-        {/foreach}
-	</div>
-</div>
+        <!--End main title-->
+
+
+        <!--Content-->
+        <div class="content">
+
+            <!--Block content-->
+            <div class="block-content">
+
+
+                <!--Timeline-->
+                <div class="timeline education">
+
+
+                    <!--Row-->
+                    <div class="row ">
+
+
+                        <div class="col-md-12">
+
+
+                            <!--Experience holder-->
+                            <div class="exp-holder margTop">
+
+
+                                <!--Experience-->
+                                <div class="exp" n:foreach="$educations as $item">
+                                    <div class="hgroup">
+                                        <h4>{$item->school}</h4>
+                                        <h6><i class="icon-calendar"></i>{$item->period}</h6>
+                                    </div>
+                                    <p>{$item->finishedWith}</p>
+                                </div>
+                                <!--End experience-->
+
+                            </div>
+                            <!--End experience holder-->
+                        </div>
+
+
+                    </div>
+                    <!--End row-->
+
+                </div>
+                <!--End timeline-->
+
+            </div>
+            <!--End block content-->
+
+
+        </div>
+        <!--End content-->
+    </div>
+</section>
 
 

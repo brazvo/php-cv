@@ -1,31 +1,135 @@
 {* This is the welcome page, you can delete it *}
 
 {block content}
-<div id="banner">
-	<h1 n:block=title>Curriculum Vitae</h1>
-	<h2>{$applicant->name}</h2>
-</div>
+<!--About Tab-->
+<section id="about" class="bgWhite ofsInBottom">
 
-<div id="content">
-	<p><strong>Applying for position:</strong> {$position}</p>
+    <!--About -->
+    <div class="about">
 
-	<ul class="nav nav-tabs nav-justified">
-        <li class="active"><a href="{link CurriculumVitae:default}">Personal</a></li>
-        <li><a href="{link CurriculumVitae:education}">Education</a></li>
-        <li><a href="{link CurriculumVitae:workExperience}">Work Experiences</a></li>
-        <li><a href="{link CurriculumVitae:skills}">Skills</a></li>
-    </ul>
+        <!--Main title-->
 
-    <div id="ajaxWrapper">
-        <h3>Personal Information</h3>
+        <div class="main-title">
+            <h1>who am i</h1>
 
-        <p>
-            <strong>Date of birth:</strong> {$applicant->dateOfBirth}<br>
-            <strong>Address:</strong> {$applicant->address}<br>
-            <strong>Phone:</strong> {$applicant->phone}<br>
-            <strong>Email:</strong> {$applicant->email}
-        </p>
-	</div>
-</div>
+            <div class="divider">
+                <div class="zigzag large clearfix " data-svg-drawing="yes">
+                    <svg xml:space="preserve" viewBox="0 0 69.172 14.975" width="37" height="28" y="0px" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1">
+<path d="M1.357,12.26 10.807,2.81 20.328,12.332
+	29.781,2.879 39.223,12.321 48.754,2.79 58.286,12.321 67.815,2.793 "  style="stroke-dasharray: 93.9851, 93.9851; stroke-dashoffset: 0;"/>
+</svg>
+                </div>
+            </div>
+        </div>
+
+        <!--End main title-->
+
+
+        <!--Content-->
+        <div class="content">
+
+            <!--Block content-->
+            <div class="block-content margBSmall">
+
+                <div class=" profile margBSmall">
+                    <h1 n:block=title>{$applicant->name}</h1>
+
+                    <h3>{$applicant->position}</h3>
+                </div>
+
+                <!--Row-->
+                <div class="row">
+                    <div class="col-md-12">
+                        <p n:foreach="$applicant->description as $row">{$row}</p>
+                    </div>
+                </div>
+                <!--End row-->
+
+            </div>
+            <!--End block content-->
+
+
+            <!--Block content-->
+            <div class="block-content">
+
+                <div class="info">
+
+                    <!--Row-->
+                    <div class="row">
+                        <div class="col-md-6">
+
+                            <ul class="info-list clearfix">
+                                <li><span class="inf">Name </span> <span
+                                        class="value">{$applicant->name}</span></li>
+                                <li><span class="inf">Date of birth</span> <span class="value"> {$applicant->dateOfBirth} </span>
+                                </li>
+                                <li><span class="inf">Place of birth</span> <span class="value"> {$applicant->placeOfBirth} </span>
+                                </li>
+                                <li><span class="inf">Address</span> <span class="value"> {$applicant->address}</span>
+                                </li>
+                            </ul>
+
+                        </div>
+
+
+                        <div class="col-md-6">
+
+                            <ul class="info-list">
+                                <li n:foreach="$applicant->contacts as $contact"><span class="inf">{$contact['type']}</span> <span class="value">{$contact['contact']}</span>
+                                </li>
+                            </ul>
+
+                        </div>
+
+
+                    </div>
+                    <!--End row-->
+
+                </div>
+
+            </div>
+            <!--End block content-->
+
+
+        </div>
+        <!--End content-->
+
+
+        <!--Button-->
+        <div class="button margTop ofsInTop tCenter">
+
+            <div class="divider">
+                <div class="zigzag large clearfix " data-svg-drawing="yes">
+                    <svg xml:space="preserve" viewBox="0 0 69.172 14.975" width="37" height="28" y="0px" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1">
+		<path d="M1.357,12.26 10.807,2.81 20.328,12.332
+			29.781,2.879 39.223,12.321 48.754,2.79 58.286,12.321 67.815,2.793 "  style="stroke-dasharray: 93.9851, 93.9851; stroke-dashoffset: 0;"/>
+		</svg>
+                </div>
+            </div>
+
+
+            <!--Row-->
+            <div class="row ">
+
+
+                <div class="col-md-12">
+                    <a class="but opc-1 ico" href="data/zvolensky_cv_sk.pdf">Download my cv</a>
+                    <a class="but opc-3 ico" href="http://www.zvolensky.info:8080/">Switch to Angular</a>
+                </div>
+
+
+            </div>
+            <!--End row-->
+
+
+        </div>
+        <!--End button-->
+
+
+    </div>
+    <!--End about-->
+
+</section>
+<!--End about tab-->
 
 
