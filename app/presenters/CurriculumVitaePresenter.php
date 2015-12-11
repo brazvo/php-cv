@@ -28,8 +28,8 @@ class CurriculumVitaePresenter extends Nette\Application\UI\Presenter
     {
         parent::beforeRender();
 
-        if( file_exists(WWW_DIR . '/api/en/cv.json') ) {
-            $this->data = json_decode( file_get_contents(WWW_DIR . '/api/en/cv.json'), true );
+        if( file_exists(APP_DIR . '/data/en/cv.json') ) {
+            $this->data = json_decode( file_get_contents(APP_DIR . '/data/en/cv.json'), true );
         }
 
     }
